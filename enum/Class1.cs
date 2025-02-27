@@ -1,8 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-[assembly: DisableRuntimeMarshalling ()]
-
 public partial class Class1
 {
 	[DllImport ("libc")]
