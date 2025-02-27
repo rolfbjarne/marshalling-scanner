@@ -32,7 +32,7 @@ internal sealed class Program {
         var t = new MarshalingPInvokeScanner ();
         t.BuildEngine = new BuildEngine ();
         t.Assemblies = inputAssemblies.OrderBy (v => v).ToArray ();
-        t.Verbose = verbose;
+        // t.Verbose = verbose;
         var rv = t.Execute ();
 
         return rv ? 0 : 1;

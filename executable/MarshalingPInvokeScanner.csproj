@@ -24,6 +24,7 @@
     <PackageReference Include="System.Reflection.MetadataLoadContext" Version="$(SystemReflectionMetadataLoadContextToolsetVersion)" />
 
     <Compile Include="$(DotnetRuntimePath)/src/tasks//Common/LogAsErrorException.cs" />
-    <Compile Include="$(DotnetRuntimePath)/src/tasks/MonoTargetsTask/MarshalingPInvokeScanner/*.cs" />
+    <Compile Include="$(DotnetRuntimePath)/src/tasks/MonoTargetsTasks/MarshalingPInvokeScanner/MarshalingPInvokeScanner.cs" />
+    <Compile Include="$(DotnetRuntimePath)/src/tasks/MonoTargetsTasks/MarshalingPInvokeScanner/MinimalMarshalingTypeCompatibilityProvider.cs" />
   </ItemGroup>
 </Project>
