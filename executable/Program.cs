@@ -13,12 +13,12 @@ internal sealed class Program {
     {
         var inputAssemblies = new List<string> ();
 
-        bool verbose = false;
+        // bool verbose = false;
         foreach (var arg in arguments) {
-            if (arg == "-v") {
-                verbose = true;
-                continue;
-            }
+            // if (arg == "-v") {
+            //     verbose = true;
+            //     continue;
+            // }
             if (File.Exists (arg)) {
                 inputAssemblies.Add (arg);
             } else if (Directory.Exists (arg)) {
@@ -34,6 +34,11 @@ internal sealed class Program {
         t.Assemblies = inputAssemblies.OrderBy (v => v).ToArray ();
         // t.Verbose = verbose;
         var rv = t.Execute ();
+
+        if (t?.IncompatibleAssemblies?.Any () == true) {
+            Console.Error.WriteLine ($"❌ Failed, because some assemblies are incompatible");
+            return 1;
+        }
 
         return rv ? 0 : 1;
     }
